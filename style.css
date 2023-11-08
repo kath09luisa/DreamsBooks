@@ -65,3 +65,9 @@ header {
   width: 200px;
   height: 200px;
 }
+.sticky-bottom{
+  margin-top: 500px ;
+  text-align: center;
+  background-color: black;
+}
+
