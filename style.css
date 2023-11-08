@@ -71,3 +71,69 @@ header {
   background-color: black;
 }
 
+.custom-card{
+  display: block;
+  width: 300px;
+  height: 500px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-top: 450px;
+  margin-left: 150px;
+}
+#card2{
+  margin-left: 400px;
+  margin-top: -950px;
+}
+#card3{
+  margin-left: 800px;
+  margin-top: -950px;
+}
+.custom-card:hover{
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3  );
+}
+.card-image {
+  width: 300px;
+  height: 250px;
+  display: block;
+  background: url("./li.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.card-text {
+  grid-area: text;
+  margin: 25px;
+  height: 100px;
+}
+.card-text p {
+  color: grey;
+  font-size:15px;
+  font-weight: 300;
+}
+.card-text h2 {
+  margin-top:0px;
+  font-size:28px;
+}
+.card-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #e6cefd;
+}
+.card-price .store {
+  font-size: 18px;
+  width: 150px;
+}
+.card-price .store-price {
+  font-size: 28px;
+  width: 150px;
+  font-weight: bold;
+}
