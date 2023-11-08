@@ -1,0 +1,67 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#center {
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 0 2%;
+  display: flex;
+}
+header {
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  padding: 20px 0;
+  border-bottom: 0.5px solid blueviolet;
+}
+#navbar {
+  background-color: white;
+}
+.btn-acao {
+  display: flex;
+}
+#logo {
+  width: 100px;
+  margin-top: 0px;
+}
+
+.menu a {
+  color: blueviolet;
+  font-size: 15px;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: aqua;
+}
+.menu .btn_menu {
+  background-color: aquamarine;
+  display: inline-block;
+  padding: 4px 10px;
+}
+.d-block{
+ height: 400px !important;
+ width: 1100px !important;
+}
+#titulo{
+  margin-top: 250px;
+  margin-left: 160px;
+  font-size: 120px;
+  height: 150px;
+  width: 500px;
+}
+#titulo2{
+  margin-top: -45px;
+  margin-left: 360px;
+  font-size: 120px !important;
+  width: 500px;
+}
+#imagem_logo{
+  margin-top: -350px;
+  margin-left: 750px;
+  width: 200px;
+  height: 200px;
+}
