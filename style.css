@@ -3,13 +3,22 @@ body {
   height: 100vh;
 }
 
-#center {
+#center, #center2, #center3, #center4 {
   background-color: rgb(255, 255, 255);
   justify-content: center;
   margin: 0 auto;
   margin-top: 25px;
   padding: 0 2%;
   display: flex;
+}
+#center2{
+  margin-left: -750px;
+}
+#center3{
+  margin-left: -350px;
+}
+#center4{
+  margin-left: -50px;
 }
 header {
   width: 100%;
@@ -62,13 +71,12 @@ header {
 #imagem_logo{
   margin-top: -350px;
   margin-left: 750px;
-  width: 200px;
-  height: 200px;
 }
-.sticky-bottom{
-  margin-top: 500px ;
+.bottom{
   text-align: center;
+  justify-content: baseline;
   background-color: black;
+  margin-top: 200px;
 }
 
 .custom-card{
@@ -81,17 +89,10 @@ header {
   background: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin-top: 450px;
-  margin-left: 150px;
+  margin-top: 250px;
+  margin-left: 60px;
 }
-#card2{
-  margin-left: 400px;
-  margin-top: -950px;
-}
-#card3{
-  margin-left: 800px;
-  margin-top: -950px;
-}
+
 .custom-card:hover{
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3  );
 }
