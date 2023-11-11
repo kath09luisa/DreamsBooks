@@ -1,0 +1,42 @@
+body {
+    width: 100vw;
+    height: 100vh;
+  }
+  header {
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 0.5px solid blueviolet;
+  }
+  #navbar {
+    background-color: white;
+  }
+  .btn-acao {
+    display: flex;
+  }
+  #logo {
+    width: 100px;
+    margin-top: 0px;
+  }
+  
+  .menu a {
+    color: blueviolet;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .menu a:hover {
+    color: aqua;
+  }
+  .menu .btn_menu {
+    background-color: aquamarine;
+    display: inline-block;
+    padding: 4px 10px;
+  }
+  #titulo{
+    margin-top: 100px;
+    margin-left: 150px;
+    width: auto;
+    height: auto;
+    font-size: 30px; 
+  }
