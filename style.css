@@ -1,6 +1,7 @@
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 #center, #center2, #center3, #center4 {

@@ -1,0 +1,94 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  header {
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 0.5px solid blueviolet;
+  }
+  #navbar {
+    background-color: white;
+  }
+  #logo {
+    width: 100px;
+    margin-top: 0px;
+  }
+  #titulo{
+    margin-top: 100px;
+    margin-left: 150px;
+    width: auto;
+    height: auto;
+    font-size: 40px; 
+  }
+  #localizacao{
+    margin-left: -20px;
+    margin-top: -20px;
+    width: 300px;
+    height: 300px;
+    font-size: 20px; 
+    text-align: justify;
+  }
+  #textinho{
+    font-size: 20px; 
+    text-align: left;
+    width: 400px;
+    margin-top: -20px;
+  }
+  #center, #center2, #center3{
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 0 2%;
+    display: flex;
+  }
+  #center{
+    margin-left: -1000px;
+  }
+  #center2{
+    margin-left: -750px;
+  }
+  #center3{
+    margin-top: -400px;
+    margin-left: 300px;
+  }
+  #logos{
+    margin-top: -150px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+  }
+  #logo2{
+    margin-left: -195px;
+  }
+  #logo3{
+    margin-left: -430px;
+  }
+  #logo4{
+    margin-left: -660px;
+  }
+  #formulario{
+    width: 600px;
+    margin-left: 630px;
+    margin-top: 10px;
+  }
+  #submit{
+    background-color: lavender;
+    cursor: pointer;
+  }
+  #reset{
+    background-color: rgb(185, 225, 241);
+    cursor: pointer;
+  }
+  .bottom{
+    text-align: center;
+    justify-content: baseline;
+    background-color: black;
+    margin-top: 300px;
+    width: 100%;
+  }
