@@ -23,6 +23,16 @@ body {
     height: auto;
     font-size: 30px; 
   }
+  #titulo2{
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+    font-size: 40px; 
+    cursor: pointer;
+  }
+  #titulo2:hover{
+    text-decoration: underline;
+  }
 #textinho{
     margin-left: 150px;
     width: 500px;
@@ -35,4 +45,40 @@ body {
   justify-content: baseline;
   background-color: black;
   margin-top: 200px;
+  width: 100%;
+}
+#ft_grupo{
+  margin-top: -600px;
+  margin-left: 750px;
+  height: 400px;
+  width: 400px;
+}
+#center, #center2, #center3, #center4{
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 0 2%;
+  display: flex;
+}
+#center{
+  margin-left: -1055px;
+}
+#center2{
+  margin-left: -750px;
+}
+#center3{
+  margin-left: -300px;
+}
+#pessoa1, #pessoa2{
+  margin-top: 50px;
+}
+#pessoa3{
+  margin-top: 50px;
+}
+#pessoa4, #pessoa5{
+  margin-top: 50px;
+}
+#p1{
+  font-size: 30px;
 }
