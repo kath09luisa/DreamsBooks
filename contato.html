@@ -86,7 +86,7 @@
         <div class="container justify-content-center">
           <ul class="navbar-nav d-flex justify-content-around">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+            <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
             <li class="nav-item">
               <a href="quemsomos.html" class="nav-link">Quem somos</a>
             </li>
@@ -134,19 +134,19 @@
     <div id="formulario">
         <form class="row g-3">
             <div class="col-12">
-                <input type="text" class="form-control" id="nome" placeholder="Digite seu Nome Completo:">
+                <input type="text" class="form-control" id="nome" name="nome_ctt" placeholder="Digite seu Nome Completo:">
             </div>
             <div class="col-12">
-                <input type="text" class="form-control" id="email" placeholder="Digite seu Email:">
+                <input type="text" class="form-control" id="email" name="email_ctt" placeholder="Digite seu Email:">
             </div>
             <div class="col-12">
-                <textarea class="form-control" aria-label="With textarea" rows="5" maxlength="500" placeholder="Digite sua Sugestão:"></textarea>
+                <textarea class="form-control" aria-label="With textarea" name="suges_ctt" rows="5" maxlength="500" placeholder="Digite sua Sugestão:"></textarea>
             </div>
             <div class="col-2">
-                <input type="submit" class="form-control" id="submit" placeholder="Enviar:">
+                <input type="submit" class="form-control" id="submit" name="enviar" placeholder="Enviar:">
             </div>
             <div class="col-2">
-                <input type="reset" class="form-control" id="reset" placeholder="Limpar:">
+                <input type="reset" class="form-control" id="reset" name="limpar" placeholder="Limpar">
             </div>
         </form>
     </div>
