@@ -78,11 +78,11 @@ body {
     margin-top: 10px;
   }
   #submit{
-    background-color: lavender;
+    background-color: #bf9be0;
     cursor: pointer;
   }
   #reset{
-    background-color: rgb(185, 225, 241);
+    background-color: #b7e1f1;
     cursor: pointer;
   }
   .bottom{
@@ -92,3 +92,4 @@ body {
     margin-top: 300px;
     width: 100%;
   }
+  
