@@ -1,17 +1,34 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["id"])) {
+    
+    $mysqli = require __DIR__ . "/conexao.php";
+    
+    $sql = "SELECT * FROM usuario
+            WHERE id = {$_SESSION["id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width-device-width, initial-scale-1" />
-    <link rel="shortcut icon" href="/assets/livro.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/livro.ico" type="image/x-icon">
     <title>Dreams Books</title>
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link href="/styles/style.css" rel="stylesheet" />
+    <link href="./styles/style.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script
       src="./../bootstrap-5.3.1/dist/js/bootstrap.min.js"
@@ -35,13 +52,13 @@
       <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="/assets/logo.png" alt="logo" id="logo" />
+            <img src="./assets/logo.png" alt="logo" id="logo" />
           </a>
           <form
             class="d-flex align-items-center input-group mx-2 px-5"
             role="search"
           >
-            <img src="/assets/search.png" alt="search" width="25" height="25" />
+            <img src="./assets/search.png" alt="search" width="25" height="25" />
             <input
               class="form-control me-2 border-top-0 border-start-0 border-end-0 border-black"
               type="search"
@@ -61,7 +78,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <img src="/assets/user.png" alt="usuario" width="25" />
+                  <img src="./assets/user.png" alt="usuario" width="25" />
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Perfil</a></li>
@@ -74,14 +91,14 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <img src="/assets/heart.png" alt="favoritos" width="25" />
+                  <img src="./assets/heart.png" alt="favoritos" width="25" />
                 </a>
               </li>
             </div>
           </ul>
         </div>
       </nav>
-
+      
       <nav class="navbar navbar-expand-lg">
         <div class="container justify-content-center">
           <ul class="navbar-nav d-flex justify-content-around">
@@ -94,19 +111,29 @@
         </div>
       </nav>
     </header>
-
+      <?php if (isset($user)): ?>
+        
+        <p>Hello <?= htmlspecialchars($user["nome"]) ?></p>
+        
+        <p><a href="logout.php">Log out</a></p>
+        
+      <?php else: ?>
+          
+          <p><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></p>
+          
+      <?php endif; ?>
   <div id="center">
   <div id="sembug">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" interval="100">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/assets/slide1.png" class="d-block w-100" alt="...">
+          <img src="./assets/slide1.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/assets/slide2.png" class="d-block w-100" alt="...">
+          <img src="./assets/slide2.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/assets/slide3.png" class="d-block w-100" alt="...">
+          <img src="./assets/slide3.png" class="d-block w-100" alt="...">
         </div>
       </div>
     </div>
@@ -125,7 +152,7 @@
 </div>
 <div id="center4">
   <div id="imagem_logo">
-    <img src="/assets/img_logo.png">
+    <img src="./assets/img_logo.png">
   </div>
 </div>  
    <!--<div class="container-fluid my-3 p-5">

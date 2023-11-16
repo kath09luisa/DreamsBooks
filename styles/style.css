@@ -101,7 +101,7 @@ header {
   width: 300px;
   height: 250px;
   display: block;
-  background: url("/assets/li.png");
+  background: url("./../assets/li.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: cover;

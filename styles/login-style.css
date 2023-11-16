@@ -67,6 +67,9 @@
     outline: none;
     background: transparent;
 }
+.input-fields{
+    width: 100%;
+}
 .submit-btn{
     width: 300px;
     padding: 10px 30px;
@@ -93,7 +96,7 @@ span{
     left: 0px;
     top: 50px;
 }
-#register{
+#signup{
     left: 450px;
     top: -350px;
 }
