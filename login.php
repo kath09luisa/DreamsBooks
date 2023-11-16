@@ -88,12 +88,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input type="text" class="input-field" id="nome" name="nome" placeholder="Nome" required>
                     </div><div class="input-fields">
                     <input type="email" class="input-field" id="email" name="email" placeholder="Email" required>
-                    </div><div>
+                    </div><div class="input-fields">
                     <input type="password" class="input-field" id="senha" name="senha" placeholder="Senha" required>
-                    </div><div>
+                    </div><div class="input-fields">
                     <input type="password" class="input-field" name="senha_confirmacao" placeholder="Repita a senha" required>
-                    </div><div>
-                    <input type="checkbox" class="check-box"/><span>Eu concordo com os termos e condições.</span>
+                    </div><div class="input-fields">
+                    <input type="checkbox" class="check-box" id="check_box_necesary"/><span>Eu concordo com os termos e condições.</span>
                     </div>
                     <div id="div-center">
                       <button type="submit" class="submit-btn">Registrar</button>
