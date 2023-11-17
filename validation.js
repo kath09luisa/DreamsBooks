@@ -22,18 +22,18 @@ validation
             rule: 'password',
           }
     ])
-    .addField('#advanced-usage_repeat-password', [
+    .addField('#senha_confirmacao', [
         {
           rule: 'required',
         },
         {
           validator: (value, fields) => {
             if (
-              fields['#advanced-usage_password'] &&
-              fields['#advanced-usage_password'].elem
+              fields['#senha'] &&
+              fields['#senha'].elem
             ) {
               const repeatPasswordValue =
-                fields['#advanced-usage_password'].elem.value;
+                fields['#senha'].elem.value;
     
               return value === repeatPasswordValue;
             }
@@ -43,12 +43,15 @@ validation
           errorMessage: 'Passwords should be the same',
         },
       ])
-    .addField("#check_box_necessary", [
-        {
+      .addField(
+        '#advanced-usage_consent_checkbox',
+        [
+          {
             rule: 'required',
           },
-          {
-            errorsContainer: '#check_box_necessary-errors-container',
-          }
-    ]);
+        ],
+        {
+          errorsContainer: '#advanced-usage_consent_checkbox-errors-container',
+        }
+      );
     

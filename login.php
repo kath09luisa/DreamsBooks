@@ -91,10 +91,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div><div class="input-fields">
                     <input type="password" class="input-field" id="senha" name="senha" placeholder="Senha" required>
                     </div><div class="input-fields">
-                    <input type="password" class="input-field" name="senha_confirmacao" placeholder="Repita a senha" required>
+                    <input type="password" class="input-field" id="senha_confirmacao" name="senha_confirmacao" placeholder="Repita a senha" required>
                     </div><div class="input-fields">
-                    <input type="checkbox" class="check-box" id="check_box_necesary"/><span>Eu concordo com os termos e condições.</span>
+                    <input type="checkbox" class="check-box" id="advanced-usage_consent_checkbox"/><span id="advanced-usage_consent_checkbox">Eu concordo com os termos e condições.</span>
                     </div>
+                    <div id="advanced-usage_consent_checkbox-errors-container"></div>
                     <div id="div-center">
                       <button type="submit" class="submit-btn">Registrar</button>
                     </div>
