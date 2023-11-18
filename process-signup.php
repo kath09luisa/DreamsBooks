@@ -26,25 +26,25 @@ if ($_POST["senha"] !== $_POST["senha_confirmacao"]) {
 
 $password_hash = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
-$mysqli = require __DIR__ . "/conexao.php";
+$mysqli = require __DIR__ . "/database.php";
 
 $sql = "INSERT INTO usuario (nome, email, password_hash)
         VALUES (?, ?, ?)";
-        
+
 $stmt = $mysqli->stmt_init();
+
 
 if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
 $stmt->bind_param("sss",
-                  $_POST["nome"],
-                  $_POST["email"],
+                $_POST["nome"],
+                $_POST["email"],
                   $password_hash);
                   
 if ($stmt->execute()) {
-
-    header("Location: index.html");
+    header("Location: login.php");
     exit;
     
 } else {

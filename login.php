@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $mysqli = require __DIR__ . "/database.php";
     
-    $sql = sprintf("SELECT * FROM user
+    $sql = sprintf("SELECT * FROM usuario
                     WHERE email = '%s'",
                    $mysqli->real_escape_string($_POST["email"]));
     
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     if ($user) {
         
-        if (password_verify($_POST["password"], $user["password_hash"])) {
+        if (password_verify($_POST["senha"], $user["password_hash"])) {
             
             session_start();
             
@@ -45,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="./styles/login-style.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
         <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
         <script src="./validation.js" defer/></script>
         <script
@@ -75,15 +74,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <?php if ($is_invalid): ?>
                     <em>Invalid login</em>
                 <?php endif; ?>
-                <form id="login" class="input-group">
-                    <input type="text" class="input-field" name="email_login" placeholder="Email" required>
-                    <input type="password" class="input-field" name="senha_login" placeholder="Senha" required>
+                <form method="post" id="login" class="input-group">
+                    <input type="text" class="input-field" name="email" placeholder="Email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" required>
+                    <input type="password" class="input-field" name="senha" placeholder="Senha" required>
                     <input type="checkbox" class="check-box"/><span>Lembrar Senha</span>
                     <div id="div-center">
                       <button type="submit" class="submit-btn">Log In</button>
                     </div>
                 </form>
-                <form class="input-group" action="process-signup.php" method="post" id="signup" novalidate>
+                
+                <form  method="post" action="process-signup.php" class="input-group" id="signup" novalidate>
                     <div class="input-fields">
                     <input type="text" class="input-field" id="nome" name="nome" placeholder="Nome" required>
                     </div><div class="input-fields">

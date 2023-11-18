@@ -2,12 +2,12 @@
 
 session_start();
 
-if (isset($_SESSION["id"])) {
+if (isset($_SESSION["user_id"])) {
     
-    $mysqli = require __DIR__ . "/conexao.php";
+    $mysqli = require __DIR__ . "/database.php";
     
     $sql = "SELECT * FROM usuario
-            WHERE id = {$_SESSION["id"]}";
+            WHERE id = {$_SESSION["user_id"]}";
             
     $result = $mysqli->query($sql);
     
@@ -55,7 +55,7 @@ if (isset($_SESSION["id"])) {
             <img src="./assets/logo.png" alt="logo" id="logo" />
           </a>
           <form
-            class="d-flex align-items-center input-group mx-2 px-5"
+            class="d-flex align-items-center input-group mx-1 px-3"
             role="search"
           >
             <img src="./assets/search.png" alt="search" width="25" height="25" />
@@ -66,9 +66,9 @@ if (isset($_SESSION["id"])) {
               aria-label="Search"
             />
           </form>
-          <ul
-            class="navbar-nav ms-5 mb-2 mb-lg-0 d-flex justify-content-between"
-          >
+
+              <?php if (isset($user)): ?>
+            <ul class="navbar-nav ms-5 mb-2 mb-lg-0 d-flex justify-content-between">
             <div class="d-flex">
               <li class="nav-item dropdown">
                 <a
@@ -80,25 +80,33 @@ if (isset($_SESSION["id"])) {
                 >
                   <img src="./assets/user.png" alt="usuario" width="25" />
                 </a>
-                <ul class="dropdown-menu">
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item disabled">
+              <?= htmlspecialchars($user["nome"]) ?>
+                  </a></li>
                   <li><a class="dropdown-item" href="#">Perfil</a></li>
-                  <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="logout.php">Logout</a>
+                      </li>
+                    </ul>
                   </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <img src="./assets/heart.png" alt="favoritos" width="25" />
-                </a>
-              </li>
-            </div>
-          </ul>
-        </div>
-      </nav>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <img src="./assets/heart.png" alt="favoritos" width="25" />
+                    </a>
+                  </li>
+              </div>
+              </ul>
       
+                  <?php else: ?>
+                    <img src="./assets/user.png" alt="usuario" id="foto_user" width="25"/>
+                    <a class="btn btn-outline-dark" href="login.php" id="login" role="button">Entre / Registrar</a>
+
+                <?php endif; ?>
+          </div>
+      </nav>
+
       <nav class="navbar navbar-expand-lg">
         <div class="container justify-content-center">
           <ul class="navbar-nav d-flex justify-content-around">
@@ -111,17 +119,8 @@ if (isset($_SESSION["id"])) {
         </div>
       </nav>
     </header>
-      <?php if (isset($user)): ?>
-        
-        <p>Hello <?= htmlspecialchars($user["nome"]) ?></p>
-        
-        <p><a href="logout.php">Log out</a></p>
-        
-      <?php else: ?>
-          
-          <p><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></p>
-          
-      <?php endif; ?>
+
+      
   <div id="center">
   <div id="sembug">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" interval="100">

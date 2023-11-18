@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = require __DIR__ . "/conexao.php";
+$mysqli = require __DIR__ . "/database.php";
 
 $sql = sprintf("SELECT * FROM usuario
                 WHERE email = '%s'",

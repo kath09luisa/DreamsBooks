@@ -139,3 +139,10 @@ header {
   width: 150px;
   font-weight: bold;
 }
+#login{
+  width: 200px !important;
+  padding-left: 10px;
+}
+#foto_user{
+  margin-right: 15px !important;
+}
