@@ -92,4 +92,8 @@ body {
     margin-top: 300px;
     width: 100%;
   }
+#login{
+    width: 200px !important;
+    padding-left: 10px;
+  }
   

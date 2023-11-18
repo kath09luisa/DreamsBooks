@@ -77,7 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <form method="post" id="login" class="input-group">
                     <input type="text" class="input-field" name="email" placeholder="Email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" required>
                     <input type="password" class="input-field" name="senha" placeholder="Senha" required>
-                    <input type="checkbox" class="check-box"/><span>Lembrar Senha</span>
                     <div id="div-center">
                       <button type="submit" class="submit-btn">Log In</button>
                     </div>

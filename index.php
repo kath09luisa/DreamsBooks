@@ -100,7 +100,7 @@ if (isset($_SESSION["user_id"])) {
               </ul>
       
                   <?php else: ?>
-                    <img src="./assets/user.png" alt="usuario" id="foto_user" width="25"/>
+
                     <a class="btn btn-outline-dark" href="login.php" id="login" role="button">Entre / Registrar</a>
 
                 <?php endif; ?>
@@ -110,10 +110,10 @@ if (isset($_SESSION["user_id"])) {
       <nav class="navbar navbar-expand-lg">
         <div class="container justify-content-center">
           <ul class="navbar-nav d-flex justify-content-around">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
             <li class="nav-item">
-              <a href="quemsomos.html" class="nav-link">Quem somos</a>
+              <a href="quemsomos.php" class="nav-link">Quem somos</a>
             </li>
           </ul>
         </div>

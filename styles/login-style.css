@@ -21,7 +21,7 @@
     position: relative;
     margin: 1% auto;
     background: #fff;
-    padding:5px;
+    padding:10px;
     overflow: hidden;
 }
 .button-box{
@@ -50,16 +50,16 @@
     transition: .5s;
 }
 .input-group{
-    top: 10px;
+    top: 15px;
     position: absolute;
     width: 300px;
     transition: .5s;
-    padding: 20px;
+    padding: 30px;
 }
 .input-field{
     width: 100%;
-    padding: 15px 0;
-    margin: 10px 0;
+    padding: 25px 0;
+    margin: 20px 0 !important;
     border-left: 0;
     border-top: 0;
     border-right: 0;

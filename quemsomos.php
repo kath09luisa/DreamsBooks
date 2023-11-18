@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = "SELECT * FROM usuario
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +28,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link href="/styles/style_qs.css" rel="stylesheet" />
+    <link href="./styles/style_qs.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script
       src="./../bootstrap-5.3.1/dist/js/bootstrap.min.js"
@@ -33,67 +50,76 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="./assets/logo.png" alt="logo" id="logo" />
-          </a>
-          <form
-            class="d-flex align-items-center input-group mx-2 px-5"
-            role="search"
-          >
-            <img src="./assets/search.png" alt="search" width="25" height="25" />
-            <input
-              class="form-control me-2 border-top-0 border-start-0 border-end-0 border-black"
-              type="search"
-              placeholder="Pesquise aqui"
-              aria-label="Search"
-            />
-          </form>
-          <ul
-            class="navbar-nav ms-5 mb-2 mb-lg-0 d-flex justify-content-between"
-          >
-            <div class="d-flex">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img src="./assets/user.png" alt="usuario" width="25" />
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Perfil</a></li>
-                  <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Logout</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <img src="./assets/heart.png" alt="favoritos" width="25" />
-                </a>
-              </li>
-            </div>
-          </ul>
-        </div>
-      </nav>
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="./assets/logo.png" alt="logo" id="logo" />
+              </a>
+              <form
+                class="d-flex align-items-center input-group mx-1 px-3"
+                role="search"
+              >
+                <img src="./assets/search.png" alt="search" width="25" height="25" />
+                <input
+                  class="form-control me-2 border-top-0 border-start-0 border-end-0 border-black"
+                  type="search"
+                  placeholder="Pesquise aqui"
+                  aria-label="Search"
+                />
+              </form>
+
+                  <?php if (isset($user)): ?>
+                <ul class="navbar-nav ms-5 mb-2 mb-lg-0 d-flex justify-content-between">
+                <div class="d-flex">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img src="./assets/user.png" alt="usuario" width="25" />
+                    </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item disabled">
+                  <?= htmlspecialchars($user["nome"]) ?>
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                          <li>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <img src="./assets/heart.png" alt="favoritos" width="25" />
+                        </a>
+                      </li>
+                  </div>
+                  </ul>
+          
+                      <?php else: ?>
+                        
+                        <a class="btn btn-outline-dark" href="login.php" id="login" role="button">Entre / Registrar</a>
+
+                    <?php endif; ?>
+              </div>
+          </nav>
 
       <nav class="navbar navbar-expand-lg">
         <div class="container justify-content-center">
           <ul class="navbar-nav d-flex justify-content-around">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
             <li class="nav-item">
-              <a href="quemsomos.html" class="nav-link">Quem somos</a>
+              <a href="quemsomos.php" class="nav-link">Quem somos</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
+
 
     <div id="center">
       <div id="titulo">
