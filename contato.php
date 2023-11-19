@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
     
     $user = $result->fetch_assoc();
 }
-
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@ if (isset($_SESSION["user_id"])) {
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link href="./styles/style_ctt.css" rel="stylesheet" />
+    <link href="./styles/style_ctt.css?v=<?=$version?>" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script
       src="./../bootstrap-5.3.1/dist/js/bootstrap.min.js"

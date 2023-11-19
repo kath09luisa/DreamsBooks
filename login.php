@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $is_invalid = true;
 }
-
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
         <link rel="shortcut icon" href="./assets/livro.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="./styles/login-style.css" rel="stylesheet" />
+        <link href="./styles/login-style.css?v=<?=$version?>" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-        <script src="./validation.js" defer/></script>
+        <script src="./validation.js?v=<?=$version?>" defer/></script>
         <script
           src="./../bootstrap-5.3.1/dist/js/bootstrap.min.js"
           rel="stylesheet"
