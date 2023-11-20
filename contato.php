@@ -177,7 +177,13 @@ include 'config.php';
     </div>
 
     <footer class="bottom">
-        <p>&copy; 2023 - Todos os direitos reservados</p>
+
+      <ul class="nav nav-pills nav-fill">
+      <li class="nav-item"><a id="termos" href="Termos-e-condições.pdf" download>Termos e Condições de uso</a></li>
+      <li class="nav-item"><p>Dreams Books &copy; 2023 - Todos os direitos reservados</p></li>
+      <li class="nav-item"><p>Email: dreamsbooks@gmail.com</p></li>
+      </ul>
+
     </footer>
 
   </body>

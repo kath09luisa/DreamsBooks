@@ -33,6 +33,7 @@
 }
 .toggle-btn{
     padding: 10px 27px;
+    height: 45px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -58,7 +59,7 @@
 }
 .input-field{
     width: 100%;
-    padding: 15px 0;
+    padding: 18px 0;
     margin: 15px 0 !important;
     border-left: 0;
     border-top: 0;

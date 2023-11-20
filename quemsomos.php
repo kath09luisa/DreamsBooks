@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
     
     $user = $result->fetch_assoc();
 }
-
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@ if (isset($_SESSION["user_id"])) {
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link href="./styles/style_qs.css" rel="stylesheet" />
+    <link href="./styles/style_qs.css?v=<?=$version?>" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script
       src="./../bootstrap-5.3.1/dist/js/bootstrap.min.js"
@@ -128,14 +128,15 @@ if (isset($_SESSION["user_id"])) {
     </div>
     <div id="center2">
       <div id="textinho">
-        <p class="fw-light">Proin mollis, quam eu tincidunt pretium, 
-          libero velit imperdiet turpis, a aliquet quam libero lacinia justo. 
-          Sed elementum lacus quis pharetra mattis. Nulla vestibulum sollicitudin 
-          lectus vitae bibendum. In hac habitasse platea dictumst. Nulla libero 
-          augue, venenatis quis ex a, pellentesque lacinia orci. Quisque ex ligula,
-          efficitur quis pellentesque ac, facilisis quis purus. Proin convallis 
-          aliquet tellus nec varius. Nunc felis sem, posuere pulvinar vestibulum 
-          interdum, varius in tortor.
+        <p class="fw-light">Somos um grupo de alunas do 3° ano 
+          onde cursamos DS (Desenvolvimento de Sistemas) e para 
+          o nosso TCC (Trabalho de Conclusão de Curso) criamos 
+          este projeto que realiza pesquisas em sites de venda, 
+          para que o usuário possa ver diferentes preços de um 
+          mesmo produto. Escolhemos trabalhar no tema de livros, 
+          pois queremos promover a venda de livros físicos que tem 
+          caído nos últimos anos, além de fazer parte da essência
+          de nosso grupo no qual todas amamos ler. 
         </p>
       </div>
     </div>
@@ -191,7 +192,13 @@ if (isset($_SESSION["user_id"])) {
     </div>
 
     <footer class="bottom">
-      <p>&copy; 2023 - Todos os direitos reservados</p>
+
+          <ul class="nav nav-pills nav-fill">
+          <li class="nav-item"><a id="termos" href="Termos-e-condições.pdf" download>Termos e Condições de uso</a></li>
+          <li class="nav-item"><p>Dreams Books &copy; 2023 - Todos os direitos reservados</p></li>
+          <li class="nav-item"><p>Email: dreamsbooks@gmail.com</p></li>
+          </ul>
+
     </footer>
 
   </body>

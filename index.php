@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
     
     $user = $result->fetch_assoc();
 }
-
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@ if (isset($_SESSION["user_id"])) {
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link href="./styles/style.css" rel="stylesheet" />
+    <link href="./styles/style.css?v=<?=$version?>" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script
       src="./../bootstrap-5.3.1/dist/js/bootstrap.min.js"
@@ -211,8 +211,14 @@ if (isset($_SESSION["user_id"])) {
   </div>
 
   <footer class="bottom">
-    <p>&copy; 2023 - Todos os direitos reservados</p>
-  </footer>
+
+          <ul class="nav nav-pills nav-fill">
+          <li class="nav-item"><a id="termos" href="Termos-e-condições.pdf" download>Termos e Condições de uso</a></li>
+          <li class="nav-item"><p>Dreams Books &copy; 2023 - Todos os direitos reservados</p></li>
+          <li class="nav-item"><p>Email: dreamsbooks@gmail.com</p></li>
+          </ul>
+
+    </footer>
   
   </body>
 </html>

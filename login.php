@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["user_id"] = $user["id"];
             
             header("Location: index.php");
+            
             exit;
         }
     }
@@ -68,17 +69,23 @@ include 'config.php';
             <div class="form-box">
                 <div class="button-box">
                     <div id="botao"></div>
-                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                    <button type="button" class="toggle-btn" onclick="signup()">Register</button>
+                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                    <button type="button" class="toggle-btn" onclick="signup()">Registrar</button>
                 </div>
                 <?php if ($is_invalid): ?>
                     <em>Invalid login</em>
+                <?php endif; ?>
+                <?php 
+                  $cadastrado = $_GET["sucess"]??"";
+                ?>
+                <?php if ($cadastrado == "cadastrado"): ?>
+                    <div style="width: 100%; display:flex; justify-content:center; color:green; background-color: lightgreen; padding-top: 5px; border-radius: 10px;"><h3>Cadastrado com sucesso!</h3></div>
                 <?php endif; ?>
                 <form method="post" id="login" class="input-group">
                     <input type="text" class="input-field" name="email" placeholder="Email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" required>
                     <input type="password" class="input-field" name="senha" placeholder="Senha" required>
                     <div id="div-center">
-                      <button type="submit" class="submit-btn">Log In</button>
+                      <button type="submit" class="submit-btn">Entrar</button>
                     </div>
                 </form>
                 
@@ -92,7 +99,7 @@ include 'config.php';
                     </div><div class="input-fields">
                     <input type="password" class="input-field" id="senha_confirmacao" name="senha_confirmacao" placeholder="Repita a senha" required>
                     </div><div class="input-fields">
-                    <input type="checkbox" class="check-box" id="advanced-usage_consent_checkbox"/><span id="advanced-usage_consent_checkbox">Eu concordo com os termos e condições.</span>
+                    <input type="checkbox" class="check-box" id="advanced-usage_consent_checkbox"/><span id="advanced-usage_consent_checkbox">Eu concordo com os <a href="Termos-e-condições.pdf" target="_blank">termos e condições</a>.</span>
                     </div>
                     <div id="advanced-usage_consent_checkbox-errors-container"></div>
                     <div id="div-center">
@@ -109,12 +116,12 @@ include 'config.php';
             function signup(){
                 x.style.left = "-400px";
                 y.style.left = "0px";
-                z.style.left = "0px";
+                z.style.left = "110px";
             }
             function login(){
                 x.style.left = "0px";
-                y.style.left = "550px";
-                z.style.left = "110px";
+                y.style.left = "400px";
+                z.style.left = "0px";
             }
         </script>
     </body>
