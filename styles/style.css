@@ -38,20 +38,6 @@ header {
   width: 100px;
   margin-top: 0px;
 }
-
-.menu a {
-  color: blueviolet;
-  font-size: 15px;
-  text-decoration: none;
-}
-.menu a:hover {
-  color: aqua;
-}
-.menu .btn_menu {
-  background-color: aquamarine;
-  display: inline-block;
-  padding: 4px 10px;
-}
 #sembug{
  height: 300px !important;
  width: 1200px !important;
@@ -83,7 +69,7 @@ header {
 .custom-card{
   display: block;
   width: 300px;
-  height: 500px;
+  min-height: 500px;
   cursor: pointer;
   transition: 0.5s;
   border-radius: 18px;
@@ -94,6 +80,10 @@ header {
   margin-left: 70px;
 }
 
+#link-texto {
+  text-decoration: none;
+  color: #000;
+}
 .custom-card:hover{
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3  );
 }
@@ -101,15 +91,17 @@ header {
   width: 300px;
   height: 250px;
   display: block;
-  background: url("./../assets/li.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: cover;
 }
+.card-image img{
+  width: 100%;
+}
 .card-text {
   grid-area: text;
   margin: 25px;
-  height: 100px;
+  min-height: 100px;
 }
 .card-text p {
   color: grey;
@@ -131,8 +123,14 @@ header {
   background: #e6cefd;
 }
 .card-price .store {
+  display: flex;
   font-size: 18px;
   width: 150px;
+  align-items: center;
+  justify-content: center;
+}
+.card-price .store span {
+  margin-left: 5px;
 }
 .card-price .store-price {
   font-size: 28px;
