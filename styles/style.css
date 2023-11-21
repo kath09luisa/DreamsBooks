@@ -63,13 +63,14 @@ header {
   text-align: center;
   justify-content: baseline;
   background-color: black;
+  color: #fff;
   margin-top: 200px;
 }
 
 .custom-card{
   display: block;
-  width: 300px;
-  min-height: 500px;
+  width: 250px;
+  min-height: 300px;
   cursor: pointer;
   transition: 0.5s;
   border-radius: 18px;
@@ -88,20 +89,28 @@ header {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3  );
 }
 .card-image {
-  width: 300px;
-  height: 250px;
+  width: 250px;
+  height: 270px;
   display: block;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: cover;
+  overflow: hidden;
 }
-.card-image img{
-  width: 100%;
+.card-image-ama img{
+  border-radius: 10px;
+  margin-top: 12px;
+  max-height: 100%;
+}
+.card-image-ame img{
+  max-width: 90%;
+  border-radius: 10px;
+  margin-top: 12px;
 }
 .card-text {
   grid-area: text;
   margin: 25px;
-  min-height: 100px;
+  min-height: 30px;
 }
 .card-text p {
   color: grey;
@@ -142,6 +151,6 @@ header {
   padding-left: 10px;
 }
 #termos{
-  color: #212529;
+  color: #fff;
   text-decoration: none;
 }

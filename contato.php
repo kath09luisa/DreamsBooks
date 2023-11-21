@@ -55,13 +55,16 @@ include 'config.php';
                 <img src="./assets/logo.png" alt="logo" id="logo" />
               </a>
               <form
+                action="/DreamsBooks/index.php"
                 class="d-flex align-items-center input-group mx-1 px-3"
                 role="search"
+                method="get"
               >
                 <img src="./assets/search.png" alt="search" width="25" height="25" />
                 <input
                   class="form-control me-2 border-top-0 border-start-0 border-end-0 border-black"
                   type="search"
+                  name="search"
                   placeholder="Pesquise aqui"
                   aria-label="Search"
                 />
